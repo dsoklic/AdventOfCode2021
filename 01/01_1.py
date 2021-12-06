@@ -1,16 +1,4 @@
-increases = 0
-
 with open('input01.txt', 'r') as f:
-    line = int(f.readline().strip())
+   input = [int(x.strip()) for x in f.readlines()]
 
-    next_line = f.readline()
-    while next_line:
-        next_line = int(next_line.strip())
-
-        if next_line > line:
-            increases += 1
-
-        line = next_line
-        next_line = f.readline()
-
-print(increases)
+print(sum([a < b for (a,b) in [input[i:i+2] for i in range(len(input)-1)]]))
