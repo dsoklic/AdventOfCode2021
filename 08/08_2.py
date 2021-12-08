@@ -11,7 +11,6 @@ def issubset(a, b):
     return a.issubset(b)
 
 def get_number_mappings(combinations: List[str]):
-    #use process of elimination
     segments = [{'a','b','c','d','e','f','g'}]*10
 
     segments[1] = next(v for i,v in enumerate(combinations) if len(v) == 2)
